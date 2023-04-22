@@ -18,22 +18,17 @@ struct AnimalsView: View {
                 LazyVGrid(columns: layout){
                     ForEach(viewModel.filterKeys, id: \.self) { key in
                         let imgURL = viewModel.imgDic[key]
-                        VStack{
-                            AsyncImage(url: URL(string: imgURL ?? "")) { img in
-                                img.resizable()
-                                    .scaledToFit()
-                                    .cornerRadius(50)
-                            } placeholder: {
-                                Image(systemName: "person.fill")
+                        if(viewModel.breedDic[key]!.count <= 1){
+                            AnimalPicImage(imgURL: imgURL, name: key)
+                        }
+                        else{
+                            NavigationLink {
+                                AnimalsSubBreedView(breed: key, SubBreed: viewModel.breedDic[key]!, type: .dog)
+                            } label: {
+                                AnimalPicImage(imgURL: imgURL, name: key + " family")
                             }
 
-                            HStack{
-                                Text(key + "\(viewModel.breedDic[key]!.count > 1 ? " family" : "")")
-                            }
-                            .font(.title.bold())
                         }
-                        .frame(width: 320, height:400)
-                        .padding(.bottom, 30)
                     }
                 }
             }

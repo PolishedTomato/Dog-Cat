@@ -7,10 +7,12 @@
 
 import SwiftUI
 
+enum Species{
+    case dog, cat
+}
+
 struct ContentView: View {
-    enum Species{
-        case dog, cat
-    }
+    
     
     @State var species: Species = .cat
     @State var animationSize1 = 1.0
