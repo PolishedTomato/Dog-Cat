@@ -21,7 +21,9 @@ struct AnimalPicImage: View {
             } placeholder: {
                 Image(systemName: "person.fill")
             }
-
+            if let url = imgURL{
+                Text("this url is \(url == "" ? "nothing" : url)")
+            }
             HStack{
                 Text(name)
             }

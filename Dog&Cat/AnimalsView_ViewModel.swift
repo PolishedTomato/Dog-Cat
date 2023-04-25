@@ -14,14 +14,14 @@ extension AnimalsView{
         
         var keys:[String]{
             if let response = apiResponse{
-                return Array(response.message.keys)
+                return Array(response.m.keys)
             }
             return []
         }
         
         var breedDic:[String: [String]]{
             if let response = apiResponse{
-                return response.message
+                return response.m
             }
             return [:]
         }

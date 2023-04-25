@@ -8,9 +8,12 @@
 import Foundation
 
 class DogAPIResponse: Codable{
+    enum CodingKeys: String, CodingKey{
+        case m = "message", s = "status"
+    }
     
-    var message:[String:[String]]
-    var status: String
+    var m:[String:[String]] = [:]
+    var s: String = ""
 }
 
 

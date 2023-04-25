@@ -16,7 +16,7 @@ struct ContentView: View {
     
     @State var species: Species = .cat
     @State var animationSize1 = 1.0
-    @State var animationSize2 = 1.0
+    @State var animationSize2 = 2.0
     
     var body: some View {
         NavigationView(){
@@ -67,7 +67,12 @@ struct ContentView: View {
                 }
                 
                 NavigationLink("go!"){
-                    AnimalsView()
+                    if(species == .dog){
+                        AnimalsView()
+                    }
+                    else{
+                        CatsView()
+                    }
                 }
                 .font(.title)
                 .foregroundColor(.white)
