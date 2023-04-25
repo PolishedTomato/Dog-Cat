@@ -10,7 +10,7 @@ import Foundation
 extension AnimalsSubBreedView{
     @MainActor class AnimalsSubBreedView_ViewModel:ObservableObject{
         @Published var searchCritic: String = ""
-        var imgDic: [String: String] = [:]
+        @Published var imgDic: [String: String] = [:]
         
         func apiURL(breedName: String, subBreedName:String, type: Species)->String{
             if(type == .dog){

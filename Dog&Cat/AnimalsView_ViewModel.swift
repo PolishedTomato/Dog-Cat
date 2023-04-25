@@ -10,7 +10,7 @@ import Foundation
 extension AnimalsView{
     @MainActor class ViewModel: ObservableObject{
         @Published var apiResponse: DogAPIResponse? = nil
-        var imgDic: [String:String] = [:]
+        @Published var imgDic: [String:String] = [:]
         
         var keys:[String]{
             if let response = apiResponse{
