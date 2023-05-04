@@ -79,18 +79,6 @@ extension Cat{
             return ""
         }
     }
-    
-    private func countryNameToCountrycode(for fullCountryName : String) -> String {
-        var locales : String = ""
-        for localeCode in NSLocale.isoCountryCodes {
-            let identifier = NSLocale(localeIdentifier: localeCode)
-            let countryName = identifier.displayName(forKey: NSLocale.Key.countryCode, value: localeCode)
-            if fullCountryName.lowercased() == countryName?.lowercased() {
-                return localeCode
-            }
-        }
-        return locales.lowercased()
-    }
 }
 
 struct CatImg: Codable{
@@ -98,4 +86,32 @@ struct CatImg: Codable{
     var url: String
     var width: Int
     var height: Int
+}
+
+struct Dog: Codable, Identifiable{
+    
+    struct Unit: Codable{
+        var imperial: String
+        var metric: String
+    }
+    
+    struct Image: Codable{
+        var id: String
+        var width: Int
+        var height: Int
+        var url: String
+    }
+    
+    var weight: Unit
+    var height: Unit
+
+    var id: Int
+    var name: String
+    var bred_for: String?
+    var life_span: String?
+    var temperament: String?
+    var origin: String?
+    var reference_image_id: String?
+    var image: Image
+    var description: String?
 }

@@ -16,7 +16,7 @@ struct ColorPicker{
         switch(color){
         case "Active", "Alert": return .red
         case "Energetic", "Playful": return .yellow
-        case "Independent", "Intelligent", "Lively", "Easy Going", "Agile": return .green
+        case "Independent", "Intelligent", "Lively", "Easy Going", "Agile", "Fun-loving": return .green
         case "Gentle","Affectionate", "Interactive", "Loyle": return .pink
         case "Calm", "Curious": return .blue
         default: return .gray
@@ -81,7 +81,7 @@ struct ContentView: View {
                 
                 NavigationLink("go!"){
                     if(species == .dog){
-                        //AnimalsView()
+                        DogsView()
                     }
                     else{
                         CatsView()

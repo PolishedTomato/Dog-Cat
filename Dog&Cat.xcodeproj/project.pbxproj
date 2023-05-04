@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5B843BF52A01B39700118EFA /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B843BF42A01B39700118EFA /* TagView.swift */; };
+		5B843BF72A03318500118EFA /* DogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B843BF62A03318500118EFA /* DogsView.swift */; };
+		5B843BF92A0331BB00118EFA /* DogsView_ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B843BF82A0331BB00118EFA /* DogsView_ViewModel.swift */; };
+		5B843BFB2A03379B00118EFA /* DogDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B843BFA2A03379B00118EFA /* DogDetailView.swift */; };
 		5B923DD229F20891004C4328 /* Dog_CatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B923DD129F20891004C4328 /* Dog_CatApp.swift */; };
 		5B923DD429F20891004C4328 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B923DD329F20891004C4328 /* ContentView.swift */; };
 		5B923DD629F20895004C4328 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B923DD529F20895004C4328 /* Assets.xcassets */; };
@@ -21,6 +24,9 @@
 
 /* Begin PBXFileReference section */
 		5B843BF42A01B39700118EFA /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
+		5B843BF62A03318500118EFA /* DogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsView.swift; sourceTree = "<group>"; };
+		5B843BF82A0331BB00118EFA /* DogsView_ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsView_ViewModel.swift; sourceTree = "<group>"; };
+		5B843BFA2A03379B00118EFA /* DogDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogDetailView.swift; sourceTree = "<group>"; };
 		5B923DCE29F20891004C4328 /* Dog&Cat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dog&Cat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B923DD129F20891004C4328 /* Dog_CatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog_CatApp.swift; sourceTree = "<group>"; };
 		5B923DD329F20891004C4328 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,6 +53,7 @@
 		5B923DC529F20891004C4328 = {
 			isa = PBXGroup;
 			children = (
+				5B843BFA2A03379B00118EFA /* DogDetailView.swift */,
 				5B923DD029F20891004C4328 /* Dog&Cat */,
 				5B923DCF29F20891004C4328 /* Products */,
 			);
@@ -67,6 +74,8 @@
 				5B843BF42A01B39700118EFA /* TagView.swift */,
 				5B923DF52A00B776004C4328 /* NSLocate.swift */,
 				5B923DEF29F77E46004C4328 /* DecodingClasses.swift */,
+				5B843BF62A03318500118EFA /* DogsView.swift */,
+				5B843BF82A0331BB00118EFA /* DogsView_ViewModel.swift */,
 				5B923DF329F7826A004C4328 /* CatsView_ViewModel.swift */,
 				5B923DF129F781AA004C4328 /* CatsView.swift */,
 				5B923DD129F20891004C4328 /* Dog_CatApp.swift */,
@@ -155,12 +164,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B843BF92A0331BB00118EFA /* DogsView_ViewModel.swift in Sources */,
 				5B923DF62A00B776004C4328 /* NSLocate.swift in Sources */,
 				5B923DE829F350BA004C4328 /* AnimalPicImage.swift in Sources */,
 				5B923DD429F20891004C4328 /* ContentView.swift in Sources */,
 				5B923DF029F77E46004C4328 /* DecodingClasses.swift in Sources */,
 				5B923DF429F7826A004C4328 /* CatsView_ViewModel.swift in Sources */,
+				5B843BFB2A03379B00118EFA /* DogDetailView.swift in Sources */,
 				5B923DD229F20891004C4328 /* Dog_CatApp.swift in Sources */,
+				5B843BF72A03318500118EFA /* DogsView.swift in Sources */,
 				5B923DF229F781AA004C4328 /* CatsView.swift in Sources */,
 				5B843BF52A01B39700118EFA /* TagView.swift in Sources */,
 			);
