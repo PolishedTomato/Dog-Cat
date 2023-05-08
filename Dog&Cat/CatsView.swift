@@ -10,13 +10,16 @@ import SwiftUI
 
 struct CatsView: View {
     @StateObject var viewModel = ViewModel()
-    
+    @State var selectedCat: Cat? = nil
     var body: some View {
         NavigationView{
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 320))]) {
                     ForEach(viewModel.filterCat) { cat in
                         AnimalPicImage(imgURL: viewModel.imgDic[cat.id], name: cat.name, countryCode: cat.country_codes ?? "N/A" ,temperament: cat.temperament!)
+                            .onTapGesture {
+                                selectedCat = cat
+                            }
                     }
                 }
             }
@@ -24,6 +27,9 @@ struct CatsView: View {
                 await viewModel.fetchCatData()
                 await viewModel.buildImgDic()
             }
+            .sheet(item: $selectedCat, content: { cat in
+                CatDetailView(cat: cat, imgUrl: viewModel.imgDic[cat.id])
+            })
             .searchable(text: $viewModel.searchText)
         }
         .navigationTitle("Cats")
