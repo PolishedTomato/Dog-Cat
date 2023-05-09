@@ -79,12 +79,18 @@ struct ContentView: View {
                     
                 }
                 
-                NavigationLink("go!"){
-                    if(species == .dog){
-                        DogsView()
+                HStack(alignment:.center){
+                    NavigationLink("go!"){
+                        if(species == .dog){
+                            DogsView()
+                        }
+                        else{
+                            CatsView()
+                        }
                     }
-                    else{
-                        CatsView()
+                    
+                    NavigationLink("See collection"){
+                        CollectionView()
                     }
                 }
                 .font(.title)

@@ -7,10 +7,13 @@
 
 import Foundation
 import SwiftUI
+import RealmSwift
 
 struct CatDetailView: View {
     let cat : Cat
     let imgUrl: String?
+    
+    let realm = try! Realm()
     
     //get the width size of content string
     func getSize(fontSize: CGFloat, content: String)->CGFloat{
@@ -96,6 +99,13 @@ struct CatDetailView: View {
                 }
                 
                 RatingComponent(cat: cat)
+                
+                Button("Add to collection"){
+                    let newCat = AnimalInfo(name: cat.name, URL: imgUrl ?? "")
+                    try! realm.write{
+                        realm.add(newCat)
+                    }
+                }
             }
             .padding()
         }

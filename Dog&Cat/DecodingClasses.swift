@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 struct Cat:Codable, Identifiable{
     var weight: Weight

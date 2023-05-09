@@ -7,9 +7,11 @@
 
 import Foundation
 import SwiftUI
+import RealmSwift
 
 struct DogDetailView: View {
     let dog: Dog
+    let realm = try! Realm()
     
     //get the width size of content string
     func getSize(fontSize: CGFloat, content: String)->CGFloat{
@@ -86,6 +88,12 @@ struct DogDetailView: View {
                     }
                 }
                 
+                Button("Add to collection"){
+                    let newDog = AnimalInfo(name: dog.name, URL: dog.image.url)
+                    try! realm.write{
+                        realm.add(newDog)
+                    }
+                }
             }
             .padding()
         }
