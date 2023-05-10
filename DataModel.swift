@@ -22,7 +22,14 @@ class AnimalInfo: Object{
 }
 
 class User: Object{
-    @Persisted(primaryKey: true) var _id: ObjectId
+    @Persisted(primaryKey: true) var userName: String
+    @Persisted var passWord: String
     @Persisted var likedAnimal: List<AnimalInfo>
     
+    convenience init(userName: String, passWord: String) {
+        self.init()
+        self.userName = userName
+        self.passWord = passWord
+        self.likedAnimal = List<AnimalInfo>()
+    }
 }

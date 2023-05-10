@@ -10,11 +10,14 @@ import SwiftUI
 import RealmSwift
 
 struct CatDetailView: View {
+    let user: User
     let cat : Cat
     let imgUrl: String?
     
     let realm = try! Realm()
     
+    @State var duplicate = false
+    @State var showAlert = false
     //get the width size of content string
     func getSize(fontSize: CGFloat, content: String)->CGFloat{
         let font = UIFont.systemFont(ofSize: fontSize)
@@ -100,14 +103,30 @@ struct CatDetailView: View {
                 
                 RatingComponent(cat: cat)
                 
-                Button("Add to collection"){
-                    let newCat = AnimalInfo(name: cat.name, URL: imgUrl ?? "")
-                    try! realm.write{
-                        realm.add(newCat)
+                HStack(alignment: .center){
+                    Spacer()
+                    Button("Add to collection"){
+                        let newCat = AnimalInfo(name: cat.name, URL: imgUrl ?? "")
+                        if user.likedAnimal.filter({$0.name == cat.name}).count >= 1{
+                            duplicate = true
+                            showAlert = true
+                        }
+                        else{
+                            try! realm.write{
+                                user.likedAnimal.append(newCat)
+                            }
+                        }
                     }
+                    Spacer()
                 }
             }
             .padding()
+            .alert(duplicate ? "You have this friend in your collection already" : "Add successful", isPresented: $showAlert) {
+                Button("Ok") {
+                    duplicate = false
+                    showAlert = false
+                }
+            }
         }
     }
 }

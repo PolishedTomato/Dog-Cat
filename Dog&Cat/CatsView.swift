@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct CatsView: View {
+    let user: User
     @StateObject var viewModel = ViewModel()
     @State var selectedCat: Cat? = nil
     var body: some View {
@@ -28,7 +29,7 @@ struct CatsView: View {
                 await viewModel.buildImgDic()
             }
             .sheet(item: $selectedCat, content: { cat in
-                CatDetailView(cat: cat, imgUrl: viewModel.imgDic[cat.id])
+                CatDetailView(user: user, cat: cat, imgUrl: viewModel.imgDic[cat.id])
             })
             .searchable(text: $viewModel.searchText)
         }
@@ -36,8 +37,8 @@ struct CatsView: View {
     }
 }
 
-struct CatsView_Previews: PreviewProvider {
-    static var previews: some View {
-        CatsView()
-    }
-}
+//struct CatsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CatsView()
+//    }
+//}

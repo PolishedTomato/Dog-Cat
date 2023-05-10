@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B83123C2A0B10D000AD15BA /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B83123B2A0B10D000AD15BA /* LoginPage.swift */; };
+		5B83123E2A0B190C00AD15BA /* CreateUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B83123D2A0B190C00AD15BA /* CreateUserView.swift */; };
 		5B843BF52A01B39700118EFA /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B843BF42A01B39700118EFA /* TagView.swift */; };
 		5B843BF72A03318500118EFA /* DogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B843BF62A03318500118EFA /* DogsView.swift */; };
 		5B843BF92A0331BB00118EFA /* DogsView_ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B843BF82A0331BB00118EFA /* DogsView_ViewModel.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B83123B2A0B10D000AD15BA /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
+		5B83123D2A0B190C00AD15BA /* CreateUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserView.swift; sourceTree = "<group>"; };
 		5B843BF42A01B39700118EFA /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		5B843BF62A03318500118EFA /* DogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsView.swift; sourceTree = "<group>"; };
 		5B843BF82A0331BB00118EFA /* DogsView_ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsView_ViewModel.swift; sourceTree = "<group>"; };
@@ -99,6 +103,8 @@
 				5B923DF129F781AA004C4328 /* CatsView.swift */,
 				5B923DD129F20891004C4328 /* Dog_CatApp.swift */,
 				5B923DD329F20891004C4328 /* ContentView.swift */,
+				5B83123B2A0B10D000AD15BA /* LoginPage.swift */,
+				5B83123D2A0B190C00AD15BA /* CreateUserView.swift */,
 				5B923DD529F20895004C4328 /* Assets.xcassets */,
 				5B923DD729F20895004C4328 /* Preview Content */,
 			);
@@ -197,6 +203,7 @@
 				5B843BFD2A08724D00118EFA /* CatDetailView.swift in Sources */,
 				5B843C242A09CF8F00118EFA /* DataModel.swift in Sources */,
 				5B923DF029F77E46004C4328 /* DecodingClasses.swift in Sources */,
+				5B83123E2A0B190C00AD15BA /* CreateUserView.swift in Sources */,
 				5B923DF429F7826A004C4328 /* CatsView_ViewModel.swift in Sources */,
 				5B843C2D2A09D8A400118EFA /* CollectionView.swift in Sources */,
 				5B843BFF2A0878F400118EFA /* RatingView.swift in Sources */,
@@ -206,6 +213,7 @@
 				5B843BF72A03318500118EFA /* DogsView.swift in Sources */,
 				5B923DF229F781AA004C4328 /* CatsView.swift in Sources */,
 				5B843BF52A01B39700118EFA /* TagView.swift in Sources */,
+				5B83123C2A0B10D000AD15BA /* LoginPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

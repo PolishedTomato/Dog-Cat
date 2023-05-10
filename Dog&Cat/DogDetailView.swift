@@ -10,6 +10,7 @@ import SwiftUI
 import RealmSwift
 
 struct DogDetailView: View {
+    let user: User
     let dog: Dog
     let realm = try! Realm()
     
@@ -23,6 +24,9 @@ struct DogDetailView: View {
         
         return size.width
     }
+    
+    @State var duplicate = false
+    @State var showAlert = false
     
     var body: some View {
         ScrollView{
@@ -88,21 +92,38 @@ struct DogDetailView: View {
                     }
                 }
                 
-                Button("Add to collection"){
-                    let newDog = AnimalInfo(name: dog.name, URL: dog.image.url)
-                    try! realm.write{
-                        realm.add(newDog)
+                HStack(alignment: .center){
+                    Spacer()
+                    Button("Add to collection"){
+                        let newDog = AnimalInfo(name: dog.name, URL: dog.image.url)
+                        if user.likedAnimal.filter({$0.name == dog.name}).count >= 1{
+                            duplicate = true
+                            showAlert = true
+                        }
+                        else{
+                            try! realm.write{
+                                user.likedAnimal.append(newDog)
+                            }
+                            showAlert = true
+                        }
                     }
+                    Spacer()
                 }
             }
             .padding()
+            .alert(duplicate ? "You have this friend in your collection already" : "Add successful", isPresented: $showAlert) {
+                Button("Ok") {
+                    duplicate = false
+                    showAlert = false
+                }
+            }
         }
     }
 }
 
-struct DogDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        DogDetailView(dog: Dog(weight: Dog.Unit(imperial: "1", metric: "1"), height: Dog.Unit(imperial: "1", metric: "1"), id: 1, name: "Husky", temperament: "Crazy, Smart, Fun-loving, asndkasdad",image: Dog.Image(id: "-HgpNnGXl", width: 500, height: 500, url: "https://cdn2.thedogapi.com/images/-HgpNnGXl.jpg"), description: "this is a good dog"))
-    }
-}
+//struct DogDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DogDetailView(dog: Dog(weight: Dog.Unit(imperial: "1", metric: "1"), height: Dog.Unit(imperial: "1", metric: "1"), id: 1, name: "Husky", temperament: "Crazy, Smart, Fun-loving, asndkasdad",image: Dog.Image(id: "-HgpNnGXl", width: 500, height: 500, url: "https://cdn2.thedogapi.com/images/-HgpNnGXl.jpg"), description: "this is a good dog"))
+//    }
+//}
 

@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct DogsView: View {
+    let user: User
     @StateObject var viewModel = ViewModel()
     @State var selectedAnimal: Dog? = nil
     
@@ -30,15 +31,15 @@ struct DogsView: View {
             .searchable(text: $viewModel.searchText)
             .sheet(item: $selectedAnimal) { animal in
                 //Text(type(of: animal))
-                DogDetailView(dog: animal)
+                DogDetailView(user: user, dog: animal)
             }
         }
         .navigationTitle("Dogs")
     }
 }
 
-struct DogsView_Previews: PreviewProvider {
-    static var previews: some View {
-        DogsView()
-    }
-}
+//struct DogsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DogsView()
+//    }
+//}
