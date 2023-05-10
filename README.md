@@ -5,7 +5,7 @@
 
 # Feature:
 * Dog/Cat breed search
-
+* Account creation so you can save all your favorite animal's photo at your account for fast access.
 # Credit
 * Deye Lei
 * https://dog.ceo/dog-api/
